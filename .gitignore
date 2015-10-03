@@ -1,0 +1,11 @@
+/*
+/*/
+!/Source/
+!/Source Assets/
+!.gitignore
+!README.md
+!MagicArena.uproject
+!MagicArena.sln
+!MagicArena.sdf
+!/Content/
+!/Build
