@@ -30,4 +30,11 @@ public:
 	void MoveRight(float Val);
 
 	void strafe(float speed);
+
+	//sets jump flag when key is pressed
+	UFUNCTION()
+	void OnStartJump();
+	//clears jump flag when key is released
+	UFUNCTION()
+	void OnStopJump();
 };

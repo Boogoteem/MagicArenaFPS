@@ -32,6 +32,8 @@ void ABaseCharacter::SetupPlayerInputComponent(class UInputComponent* InputCompo
 	InputComponent->BindAxis("MoveRight", this, &ABaseCharacter::MoveRight);
     InputComponent->BindAxis("Turn", this, &ABaseCharacter::AddControllerYawInput);
     InputComponent->BindAxis("LookUp", this, &ABaseCharacter::AddControllerPitchInput);
+	InputComponent->BindAction("Jump", IE_Pressed, this, &ABaseCharacter::OnStartJump);
+	InputComponent->BindAction("Jump", IE_Released, this, &ABaseCharacter::OnStopJump);
 }
 
 void ABaseCharacter::MoveRight(float Value) {
@@ -70,4 +72,13 @@ void ABaseCharacter::strafe(float speed) {
 	const FVector Direction = FRotationMatrix(Rotation).GetScaledAxis(EAxis::Y);
 	// add movement in that direction
 	AddMovementInput(Direction, speed);
+}
+
+void ABaseCharacter::OnStartJump()
+{
+	bPressedJump = true;
+}
+void ABaseCharacter::OnStopJump()
+{
+	bPressedJump = false;
 }
