@@ -30,6 +30,8 @@ void ABaseCharacter::SetupPlayerInputComponent(class UInputComponent* InputCompo
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 	InputComponent->BindAxis("MoveRight", this, &ABaseCharacter::MoveRight);
+    InputComponent->BindAxis("Turn", this, &ABaseCharacter::AddControllerYawInput);
+    InputComponent->BindAxis("LookUp", this, &ABaseCharacter::AddControllerPitchInput);
 }
 
 void ABaseCharacter::MoveRight(float Value) {
