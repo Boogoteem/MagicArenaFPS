@@ -5,7 +5,6 @@
 !.gitignore
 !README.md
 !MagicArena.uproject
-!MagicArena.sln
-!MagicArena.sdf
 !/Content/
 !/Build
+!/Saved
