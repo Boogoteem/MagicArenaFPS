@@ -11,6 +11,8 @@ class MAGICARENA_API ABaseCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
+	float strafeAcc = 0.2f;
+	float strafeSpeed = 0.0f;
 	// Sets default values for this character's properties
 	ABaseCharacter();
 
@@ -22,4 +24,10 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+
+	//handles strafing
+	UFUNCTION()
+	void MoveRight(float Val);
+
+	void strafe(float speed);
 };
